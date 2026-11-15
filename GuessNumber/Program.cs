@@ -87,3 +87,43 @@
 
 
 
+
+
+
+
+// switch (day) {
+//     case 1: Console.WriteLine("Понедельник"); break;
+//     case 2: Console.WriteLine("Вторник"); break;
+//     case 3: Console.WriteLine("Среда"); break;
+//     default: Console.WriteLine("Неизвестный день"); break;
+// }
+
+
+// Console.WriteLine("Меню");
+// Console.WriteLine("1. Посмотреть расписание");
+// Console.WriteLine("2. Посмотреть оценки");
+// Console.WriteLine("3. Связаться с преподавателем");
+// Console.WriteLine("4. Выйти");
+// Console.Write("Выберите пункт (1-4): ");
+// string choice = Console.ReadLine();
+
+// switch (choice) {
+//     case "1":
+//         Console.WriteLine("Расписание: ИСП-242, каб. 102, 08:30");
+//         break;
+//     case "2":
+//         Console.WriteLine("Ваши оценки: ИРСПО – 20, РПМ – 35");
+//         break;
+//     case "3":
+//         Console.WriteLine("Email: denis.leontev92@yandex.ru");
+//         break;
+//     case "4":
+//         Console.WriteLine("До свидания!");
+//         break;
+//     default:
+//         Console.WriteLine($"Ошибка: пункт «{choice}» не существует. Введите число от 1 до 4.");
+//         break;
+// }
+
+
+
