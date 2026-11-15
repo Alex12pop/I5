@@ -222,3 +222,136 @@
 
 
 
+Console.WriteLine("Задание 1");
+Console.Write("Введите пароль: ");
+string password = Console.ReadLine() ?? "";
+
+Console.Write("Подтвердите пароль: ");
+string confirmPassword = Console.ReadLine() ?? "";
+
+if (password == confirmPassword) {
+    Console.WriteLine("Пароль принят");
+}
+else {
+    Console.WriteLine("Пароль не принят");
+}
+Console.WriteLine();
+
+
+
+
+Console.WriteLine("Задание 2");
+Console.Write("Введите ваш возраст: ");
+
+if (int.TryParse(Console.ReadLine(), out int age)) {
+    if (age >= 18) {
+        Console.WriteLine("Доступ разрешён");
+    }
+    else {
+        Console.WriteLine("Доступ запрещён");
+    }
+}
+else {
+    Console.WriteLine("Ошибка: Введено некорректное число.");
+}
+Console.WriteLine();
+
+
+Console.WriteLine("Задание 3");
+Console.Write("Введите первое число: ");
+double calcNum1 = double.Parse(Console.ReadLine() ?? "0");
+
+Console.Write("Введите второе число: ");
+double calcNum2 = double.Parse(Console.ReadLine() ?? "0");
+
+Console.Write("Введите операцию (+, -, *, /): ");
+string operation = Console.ReadLine() ?? "";
+
+switch (operation) {
+    case "+":
+        Console.WriteLine($"{calcNum1} + {calcNum2} = {calcNum1 + calcNum2}");
+        break;
+    case "-":
+        Console.WriteLine($"{calcNum1} - {calcNum2} = {calcNum1 - calcNum2}");
+        break;
+    case "*":
+        Console.WriteLine($"{calcNum1} * {calcNum2} = {calcNum1 * calcNum2}");
+        break;
+    case "/":
+        if (calcNum2 != 0) {
+            Console.WriteLine($"{calcNum1} / {calcNum2} = {calcNum1 / calcNum2}");
+        }
+        else {
+            Console.WriteLine("Ошибка: Деление на ноль невозможно!");
+        }
+        break;
+    default:
+        Console.WriteLine("Ошибка: Неверная математическая операция.");
+        break;
+}
+Console.WriteLine();
+
+
+Console.WriteLine("Задание 4");
+int sum = 0;
+
+Console.Write("Введите первое число: ");
+int posNum1 = int.Parse(Console.ReadLine() ?? "0");
+if (posNum1 > 0) sum += posNum1;
+
+Console.Write("Введите второе число: ");
+int posNum2 = int.Parse(Console.ReadLine() ?? "0");
+if (posNum2 > 0) sum += posNum2;
+
+Console.Write("Введите третье число: ");
+int posNum3 = int.Parse(Console.ReadLine() ?? "0");
+if (posNum3 > 0) sum += posNum3;
+
+Console.WriteLine($"Сумма положительных чисел: {sum}");
+Console.WriteLine();
+
+
+
+Console.WriteLine("Задание 5");
+Console.WriteLine("Вы — отважный искатель приключений, отправившийся в Темный Лабиринт,");
+Console.WriteLine("чтобы найти легендарного Dungeon Master’а.\n");
+
+Console.WriteLine("1. Вы стоите перед первой дверью. Перед вами два пути:");
+Console.WriteLine("Путь A: Войти в комнату с огромным драконом.");
+Console.WriteLine("Путь B: Пойти по тёмному коридору.");
+Console.Write("Выберите путь (A/B): ");
+string firstChoice = (Console.ReadLine() ?? "").ToUpper();
+
+if (firstChoice == "A") {
+    Console.WriteLine("\nВы вошли в комнату к дракону.");
+    Console.WriteLine("Дракон говорит: \"Кто не дышит, но живёт; хоть не нужно — много пьёт; и в жизни, и в смерти тело как лёд.\"");
+    Console.Write("Ваш ответ: ");
+    string answer = (Console.ReadLine() ?? "").ToLower().Trim();
+
+    if (answer == "рыба") {
+        Console.WriteLine("\n  Дракон улыбнулся и открыл дверь в следующую комнату. Вы победили!");
+    }
+    else {
+        Console.WriteLine("\n  Дракон недоволен ответом и съел вас! Игра окончена.");
+    }
+}
+else if (firstChoice == "B") {
+    Console.WriteLine("\nВы пошли по тёмному коридору и попали в комнату с двумя дверями.");
+    Console.WriteLine("Дерь 1: Старинная дубовая дверь.");
+    Console.WriteLine("Дверь 2: Железная дверь, покрытая мхом.");
+    Console.Write("Какую дверь откроете? (1/2): ");
+    string secondChoice = Console.ReadLine() ?? "";
+
+    if (secondChoice == "1") {
+        Console.WriteLine("\n  За дверью скрыты сокровища Dungeon Master’а! Вы богаты и свободны!");
+    }
+    else if (secondChoice == "2") {
+        Console.WriteLine("\n  Вы попали в ловушку с ядовитыми шипами! Игра окончена.");
+    }
+    else {
+        Console.WriteLine("\nВы замешкались, и тьма поглотила вас. Неверный выбор.");
+    }
+}
+else {
+    Console.WriteLine("\nВы испугались и убежали обратно. Неверный выбор.");
+}
